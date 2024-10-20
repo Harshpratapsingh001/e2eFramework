@@ -1,17 +1,17 @@
-const {test, expect} = require('@playwright/test');
+const { test, expect } = require('@playwright/test');
 
 test('Validate Google homepage',
-    async ({page}) => {
+    async ({ page }) => {
         await page.goto('https://www.google.com/');
         const title = await page.title();
         await expect(page).toHaveTitle(title);
-        const url = await page.url();
+        const url = page.url();
         await expect(page).toHaveURL(url)
     }
 );
 
 test('Handle iframe',
-    async ({page}) => {
+    async ({ page }) => {
         await page.goto('https://www.google.com/');
         const frame = page.frameLocator('iframe[role="presentation"]').getByText('Stay signed out');
         await frame.click();
