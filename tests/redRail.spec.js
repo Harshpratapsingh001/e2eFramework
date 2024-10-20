@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Flight Search functionality',
+test('Train Search functionality',
     async ({ page }) => {
         await page.goto('https://www.redbus.in/');
         await page.getByRole('link', { name: 'Book Train Tickets' }).click();
@@ -43,7 +43,7 @@ test('Flight Search functionality',
         }
         await page.getByText(day).click();
 
-        await page.getByText('Free Cancellation').check();
+        await page.getByText('Free Cancellation', { exact: true }).click();
         await page.getByRole('button', { name: 'search trains' }).click();
     }
 );
