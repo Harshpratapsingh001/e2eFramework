@@ -1,5 +1,9 @@
 const { test, expect } = require('@playwright/test');
 
+test.use({
+    actionTimeout: 60000
+});
+
 test('Train Search functionality',
     async ({ page }) => {
         await page.goto('https://www.redbus.in/');
