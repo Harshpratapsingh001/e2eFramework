@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       name: Print node version
-      run: node -version
+      run: node --version
