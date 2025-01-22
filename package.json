@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/redRail.spec.js"
+    "test": "npx playwright test tests/HomePage.spec.js"
   },
   "keywords": [],
   "author": "",
