@@ -2,7 +2,9 @@
   "name": "playwright-interview-prep",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test tests/redRail.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

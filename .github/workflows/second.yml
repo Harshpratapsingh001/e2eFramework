@@ -1,8 +1,16 @@
-name: first-action
-on: workflow_dispatch
+name: test workflow
+on: push
 jobs:
-  second-job:
+  test-job:
     runs-on: ubuntu-latest
       steps:
-        - name: Print node version
-          run: ls
+        - name: Get code
+          uses: actions/checkout@v4
+        - name: Install NodeJs
+          uses: actions/setup-node@v4
+          with:
+            node-version: 22
+        - name: Install dependencies
+          run: npm ci
+        - name: Run tests
+          run: npm run test
